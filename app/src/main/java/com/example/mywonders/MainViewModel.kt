@@ -54,7 +54,7 @@ class MainViewModel: ViewModel() {
     }
 
 
-    fun deleteAll(){
+    fun deleteAll(){                    //call this function to delete all the data from local database
         viewModelScope.launch {
             database.contactDAO().deleteAll()
         }

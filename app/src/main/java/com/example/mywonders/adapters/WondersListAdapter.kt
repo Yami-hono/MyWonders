@@ -1,6 +1,5 @@
 package com.example.mywonders.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -16,7 +15,6 @@ class WondersListAdapter: RecyclerView.Adapter<WondersListAdapter.UserViewHolder
 
     fun setUpdatedList(data:ArrayList<Wonders>){
         this.data= data
-        Log.i("myadapter", "setUpdatedList: $data")
         notifyDataSetChanged()
     }
 
@@ -24,7 +22,6 @@ class WondersListAdapter: RecyclerView.Adapter<WondersListAdapter.UserViewHolder
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Wonders) {
 
-            Log.i("myadapter", "bind: $item")
             with(binding) {
                 Glide.with(root.context)
                     .load(item.imageUrl)
@@ -43,7 +40,6 @@ class WondersListAdapter: RecyclerView.Adapter<WondersListAdapter.UserViewHolder
             parent,
             false
         )
-        Log.i("myadapter", "onCreateViewHolder: ")
         return UserViewHolder(view)
     }
 
@@ -51,13 +47,11 @@ class WondersListAdapter: RecyclerView.Adapter<WondersListAdapter.UserViewHolder
         val searchResult = data.get(position)
         searchResult.let {
             holder.bind(searchResult)
-            Log.i("myadapter", "onBindViewHolder: ")
 
         }
     }
 
     override fun getItemCount(): Int {
-        Log.i("myadapter", "getItemCount: ${data.size}")
         return data.size
     }
 }
