@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginLeft="5dp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/wonderImageCard"
+            android:layout_width="120dp"
+            android:layout_margin="10dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/wonderImage"
+                android:background="@drawable/ring"
+                android:padding="3dp"
+                android:layout_width="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/wonderName"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="product Name"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/wonderImageCard"
+            app:layout_constraintTop_toBottomOf="@id/wonderImageCard" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
